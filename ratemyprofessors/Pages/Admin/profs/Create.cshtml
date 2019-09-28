@@ -1,0 +1,78 @@
+﻿@page
+@model ratemyprofessors.Pages.Admin.profs.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Professor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Professor.Name" class="control-label"></label>
+                <input asp-for="Professor.Name" class="form-control" />
+                <span asp-validation-for="Professor.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Professor.LastName" class="control-label"></label>
+                <input asp-for="Professor.LastName" class="form-control" />
+                <span asp-validation-for="Professor.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Professor.Link" class="control-label"></label>
+                <input asp-for="Professor.Link" class="form-control" />
+                <span asp-validation-for="Professor.Link" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Professor.PrivateLink" class="control-label"></label>
+                <input asp-for="Professor.PrivateLink" class="form-control" />
+                <span asp-validation-for="Professor.PrivateLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Professor.WPLink" class="control-label"></label>
+                <input asp-for="Professor.WPLink" class="form-control" />
+                <span asp-validation-for="Professor.WPLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Professor.ImageLink" class="control-label"></label>
+                <input asp-for="Professor.ImageLink" class="form-control" />
+                <span asp-validation-for="Professor.ImageLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Professor.Comment" class="control-label"></label>
+                <input asp-for="Professor.Comment" class="form-control" />
+                <span asp-validation-for="Professor.Comment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Professor.Staff" /> @Html.DisplayNameFor(model => model.Professor.Staff)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Professor.Approved" /> @Html.DisplayNameFor(model => model.Professor.Approved)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

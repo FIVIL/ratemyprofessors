@@ -1,0 +1,49 @@
+﻿@page
+@model ratemyprofessors.Pages.Admin.Messages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>ContactUs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ContactUs.Text)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ContactUs.Text)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ContactUs.MailAddress)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ContactUs.MailAddress)
+            </dd>
+        </dl>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ContactUs.MailAddress" />
+            <input type="hidden" asp-for="ContactUs.Text" />
+            <div class="form-group">
+                <label asp-for="Replay" class="control-label"></label>
+                <textarea asp-for="Replay" class="form-control" rows="10" cols="30" ></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

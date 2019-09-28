@@ -1,0 +1,82 @@
+﻿@page
+@model ratemyprofessors.Pages.Admin.comments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>To be Confirmed</h2>
+<br />
+<h3>Comments</h3>
+<p>
+    <a asp-page="Create">Create New</a>|
+    <a asp-page="index2">Confirmed</a>
+</p>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Commentss[0].Professor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Commentss[0].Comments)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Commentss[0].Verfied)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Commentss.Count; i++)
+            {
+                <tr>
+                    <td>
+                        <input type="hidden" asp-for="Commentss[i].ID" />
+                        <input type="hidden" asp-for="Commentss[i].ShowName" />
+                        <input type="hidden" asp-for="Commentss[i].Teaching" />
+                        <input type="hidden" asp-for="Commentss[i].Marking" />
+                        <input type="hidden" asp-for="Commentss[i].HomeWork" />
+                        <input type="hidden" asp-for="Commentss[i].Project" />
+                        <input type="hidden" asp-for="Commentss[i].Moods" />
+                        <input type="hidden" asp-for="Commentss[i].RollCall" />
+                        <input type="hidden" asp-for="Commentss[i].Exhausting" />
+                        <input type="hidden" asp-for="Commentss[i].HandOuts" />
+                        <input type="hidden" asp-for="Commentss[i].Update" />
+                        <input type="hidden" asp-for="Commentss[i].ScapeAtTheEnd" />
+                        <input type="hidden" asp-for="Commentss[i].Answering" />
+                        <input type="hidden" asp-for="Commentss[i].HardExams" />
+                        <input type="hidden" asp-for="Commentss[i].Knoledge" />
+                        <input type="hidden" asp-for="Commentss[i].OverAll" />
+                        <input type="hidden" asp-for="Commentss[i].Comments" />
+                        <input type="hidden" asp-for="Commentss[i].Like" />
+                        <input type="hidden" asp-for="Commentss[i].DisLike" />
+                        <input type="hidden" asp-for="Commentss[i].DateTime" />
+                        <input type="hidden" asp-for="Commentss[i].Angry" />
+                        <input type="hidden" asp-for="Commentss[i].Bluntess" />
+                        <input type="hidden" asp-for="Commentss[i].DoYourWork" />
+                        <input type="hidden" asp-for="Commentss[i].Bad" />
+                        <input type="hidden" asp-for="Commentss[i].ProfessorID" />
+                        <input type="hidden" asp-for="Commentss[i].AccountID" />
+                        <input type="hidden" asp-for="Commentss[i].EmailID" />
+                        @Html.DisplayFor(x => Model.Commentss[i].Professor.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => Model.Commentss[i].Comments)
+                    </td>
+                    <td>
+                        @Html.EditorFor(x => Model.Commentss[i].Verfied)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@Model.Commentss[i].ID">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@Model.Commentss[i].ID">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@Model.Commentss[i].ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form>

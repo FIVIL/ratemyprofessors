@@ -1,0 +1,43 @@
+﻿@page
+@model ratemyprofessors.Pages.courses.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Course.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.AliasNames)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Course.AliasNames)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Faculty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Course.Faculty.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Approved)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Course.Approved)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Course.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

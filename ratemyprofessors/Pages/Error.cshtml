@@ -1,0 +1,25 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "خطا";
+}
+<div class="error">
+    <br />
+    <h1 class="text-danger">خطا</h1>
+    <h2 class="text-danger">در پردازش درخواست شما خطایی رخ داد.</h2>
+    <br />
+    <br />
+    <p style="font-size:17px;">
+        برای بازگشت به صفحه اصلی روی این
+        <code><a href="/">لینک</a></code>
+        کلیک کنید.
+    </p>
+</div>
+@section Scripts{
+    <script>
+        window.setTimeout(function () {
+            window.location.href = '/';
+        }, 3000);
+    </script>
+}
+

@@ -1,0 +1,846 @@
+/* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+/*Index*/
+body {
+    padding-top: 50px;
+    font-family: 'Times New Roman';
+    direction: rtl;
+}
+
+code {
+    cursor: pointer;
+}
+
+    code:hover {
+        text-decoration: underline;
+        font-size: 35px;
+    }
+
+.ShareLogoImg {
+    width: 35px;
+    height: 35px;
+    margin: 3px 10px;
+}
+
+    .ShareLogoImg:hover {
+        animation: shake 3s cubic-bezier(.36,.07,.19,.97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+
+.IconCenter {
+    text-align: center;
+    margin: auto;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+.inputFomr {
+    margin: auto;
+    background-color: rgba(0, 0, 0,0.45);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+.CenterFormElement {
+    width: auto;
+    display: block;
+    margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .inputFomr {
+        width: 90%;
+    }
+}
+
+.ContactBack {
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    background-image: url(imgs/contactImagejpg.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+.PPP {
+    font-size: 17px;
+    text-align: center;
+}
+/***********************Comments**************************************/
+.MyContainer {
+    margin: auto;
+    padding: 10px 30px;
+}
+
+.TopContainerOpen {
+    background-color: rgba(245,245,245,0.25);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    border-radius: 5px;
+    color: black;
+    position: relative;
+    z-index: 10;
+}
+.TopContainerClose {
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+    color: black;
+    position: relative;
+    z-index: 10;
+}
+.ContainerButton {
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    height: 35px;
+    padding-top: 10px;
+    background-color: rgba(52, 152, 219,0.2);
+}
+
+    .ContainerButton:hover {
+        width: 100%;
+        text-align: center;
+        padding: 2px;
+        padding-top: 7px;
+        background-color: rgba(52, 152, 219,0.5);
+        cursor: pointer;
+    }
+
+.InnerElementColse {
+    width: 100%;
+    height: 0px;
+    -webkit-animation-name: InnerClose; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    animation-name: InnerClose;
+    animation-duration: 3s;
+    overflow: hidden;
+}
+
+.InnerElementOpen {
+    width: 100%;
+    height: 590px;
+    -webkit-animation-name: InnerOpen; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    animation-name: InnerOpen;
+    animation-duration: 3s;
+    overflow: hidden;
+}
+.SubmitCommentButton{
+    width:100%;
+}
+@-webkit-keyframes InnerClose {
+    from {
+        height: 590px;
+    }
+
+    to {
+        height: 0px;
+    }
+}
+
+@keyframes InnerClose {
+    from {
+        height: 590px;
+    }
+
+    to {
+        height: 0px;
+    }
+}
+
+@-webkit-keyframes InnerOpen {
+    from {
+        height: 0px;
+    }
+
+    to {
+        height: 590px;
+    }
+}
+
+@keyframes InnerOpen {
+    from {
+        height: 0px;
+    }
+
+    to {
+        height: 590px;
+    }
+}
+/****/
+.ButtomContainerClose {
+    position: relative;
+    top: 0px;
+    overflow: hidden;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+    -webkit-animation-name: ButtomClose; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    animation-name: ButtomClose;
+    animation-duration: 3s;
+}
+
+.ButtomContainerOpen {
+    position: relative;
+    top: -590px;
+    overflow: hidden;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    -webkit-animation-name: ButtomOpen; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    animation-name: ButtomOpen;
+    animation-duration: 3s;
+}
+
+@-webkit-keyframes ButtomOpen {
+    from {
+        top: 0px;
+    }
+
+    to {
+        top: -590px;
+    }
+}
+
+@keyframes ButtomOpen {
+    from {
+        top: 0px;
+    }
+
+    to {
+        top: -590px;
+    }
+}
+
+@-webkit-keyframes ButtomClose {
+    from {
+        top: -590px;
+    }
+
+    to {
+        top: 0px;
+    }
+}
+
+@keyframes ButtomClose {
+    from {
+        top: -590px;
+    }
+
+    to {
+        top: 0px;
+    }
+}
+/****/
+.FooterAnimColse {
+    position: relative;
+    top: 0px;
+    -webkit-animation-name: ButtomClose; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    animation-name: ButtomClose;
+    animation-duration: 3s;
+}
+
+.FooterAnimOpen {
+    position: relative;
+    top: -590px;
+    -webkit-animation-name: ButtomOpen; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    animation-name: ButtomOpen;
+    animation-duration: 3s;
+}
+
+@media only screen and (max-width: 768px) {
+    .InnerElementColse {
+        width: 100%;
+        height: 0px;
+        -webkit-animation-name: InnerClose; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+        animation-name: InnerClose;
+        animation-duration: 3s;
+        overflow: hidden;
+    }
+
+    @-webkit-keyframes InnerClose {
+        from {
+            height: 1000px;
+        }
+
+        to {
+            height: 0px;
+        }
+    }
+
+    @keyframes InnerClose {
+        from {
+            height: 1000px;
+        }
+
+        to {
+            height: 0px;
+        }
+    }
+
+    @-webkit-keyframes InnerOpen {
+        from {
+            height: 0px;
+        }
+
+        to {
+            height: 1000px;
+        }
+    }
+
+    @keyframes InnerOpen {
+        from {
+            height: 0px;
+        }
+
+        to {
+            height: 1000px;
+        }
+    }
+
+    .InnerElementOpen {
+        width: 100%;
+        height: 1000px;
+        -webkit-animation-name: InnerOpen; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+        animation-name: InnerOpen;
+        animation-duration: 3s;
+        overflow: hidden;
+    }
+
+    /****/
+    .ButtomContainerClose {
+        position: relative;
+        top: 0px;
+        overflow: hidden;
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+        -webkit-animation-name: ButtomClose; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+        animation-name: ButtomClose;
+        animation-duration: 3s;
+    }
+
+    .ButtomContainerOpen {
+        position: relative;
+        top: -1000px;
+        overflow: hidden;
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        -o-filter: blur(10px);
+        -ms-filter: blur(10px);
+        filter: blur(10px);
+        -webkit-animation-name: ButtomOpen; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+        animation-name: ButtomOpen;
+        animation-duration: 3s;
+    }
+
+    @-webkit-keyframes ButtomOpen {
+        from {
+            top: 0px;
+        }
+
+        to {
+            top: -1000px;
+        }
+    }
+
+    @keyframes ButtomOpen {
+        from {
+            top: 0px;
+        }
+
+        to {
+            top: -1000px;
+        }
+    }
+
+    @-webkit-keyframes ButtomClose {
+        from {
+            top: -1000px;
+        }
+
+        to {
+            top: 0px;
+        }
+    }
+
+    @keyframes ButtomClose {
+        from {
+            top: -1000px;
+        }
+
+        to {
+            top: 0px;
+        }
+    }
+    /****/
+    .FooterAnimColse {
+        position: relative;
+        top: 0px;
+        -webkit-animation-name: ButtomClose; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+        animation-name: ButtomClose;
+        animation-duration: 3s;
+    }
+
+    .FooterAnimOpen {
+        position: relative;
+        top: -885px;
+        -webkit-animation-name: ButtomOpen; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+        animation-name: ButtomOpen;
+        animation-duration: 3s;
+    }
+}
+
+.ProfDetContainer {
+    padding: 10px;
+    height: 170px;
+    margin-bottom: 1px;
+}
+
+.ProfImageContainer {
+    width: 20%;
+    float: right;
+}
+
+.ProfImage {
+    width: 99%;
+    height: 160px
+}
+
+.ProfDetTextContainer {
+    width: 77%;
+    float: left
+}
+
+.ProfNameTextContainer {
+    font-size: 18px;
+    width: 48%;
+    float: right;
+}
+
+.ProfComTextContainer {
+    width: 48%;
+    float: left;
+    height: 140px;
+    overflow: auto;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .ProfDetContainer {
+        height: 170px;
+    }
+
+    .ProfImageContainer {
+        width: 25%;
+        float: right;
+    }
+
+    .ProfImage {
+        padding-top: 10px;
+        height: 150px
+    }
+
+    .ProfDetTextContainer {
+        width: 71%;
+    }
+
+    .ProfNameTextContainer {
+        width: 100%;
+    }
+
+    .ProfComTextContainer {
+        display: none;
+    }
+}
+
+.MyColR {
+    width: 48%;
+    float: right;
+}
+
+.MyColL {
+    width: 48%;
+    float: left;
+}
+
+@media only screen and (max-width: 768px) {
+    .MyColR {
+        width: 100%;
+    }
+
+    .MyColL {
+        width: 100%;
+    }
+}
+.CommentDetailes {
+    width: 100%;
+    overflow: auto;
+    padding:5px;
+}
+.CommentDetailesInner {
+    width: 100%;
+    height: 300px;
+    overflow: auto;
+}
+.ResendEmailButtonVis {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    z-index: 40;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    display:block;
+}
+.ResendEmailButtonInVis {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    z-index: 40;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    display: none;
+}
+/*Scroll*/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(192,192,192,0.5);
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(192,192,192);
+    }
+
+/*Home**********************************************************************/
+.HomeBackgroundImage {
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    background-image: url(../src/imgs/back.jpg);
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.HomeContent {
+    color: white;
+    position: relative;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.HeaderTextt {
+    color: white;
+    text-shadow: 2px 2px rgba(0, 0, 0,0.5);
+}
+
+@media (max-width: 768px) {
+    .HomeBackgroundImage {
+        background-image: url(../src/imgs/mobileback.jpg)
+    }
+}
+
+.footer {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+}
+
+.footercontent {
+    text-align: center;
+    font-size: 14px;
+}
+
+.MainCols {
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    background-color: rgba(245,245,245,0.25);
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #eaeaea;
+    height: 500px;
+    overflow: auto;
+}
+
+.MainColsText {
+    display: block;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    background-color: rgba(245,245,245,0.45);
+    color: black;
+    font-size: 20px;
+    border-radius: 5px;
+    color: black;
+    padding: 5px 0px;
+}
+
+.BluerAdminHr {
+    padding: 1px 5px;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+.ProfAndCourseInnerHome {
+    padding: 3px;
+    height: 94px;
+    width: 100%;
+}
+/********************************Faculties****************************************/
+.ProfAndCourse {
+    width: 98%;
+    cursor: pointer;
+    color: black;
+}
+
+.ProfAndCourseInner2 {
+    padding: 3px;
+    margin: 9px 0px;
+    height: 160px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+    .ProfAndCourseInner2:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    }
+
+.ProfAndCourseInner {
+    padding: 3px;
+    margin: 9px 0px;
+    height: 94px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+    .ProfAndCourseInner:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    }
+
+.InnerLeft {
+    float: left;
+    margin-left: 10px;
+    direction: ltr;
+}
+
+.InnerRight {
+    float: right;
+}
+
+.InnerText2 {
+    margin: auto;
+    padding: 50px 0px;
+    font-size: 45px;
+}
+
+.InnerText {
+    margin: auto;
+    padding: 30px 0px;
+}
+
+.GGold {
+    color: gold;
+}
+/*****************************NavMenu*****************************************/
+.navbar li .glyphicon {
+    margin-left: 10px;
+}
+
+/* Highlighting rules for nav menu items */
+.navbar .navbar-nav .active a,
+.navbar .navbar-nav .active a:hover,
+.navbar .navbar-nav .active a:focus {
+    background-image: none;
+    background-color: #4189C7;
+    color: white;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: left;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.navbar-brand {
+    float: right;
+}
+
+.navbar {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.DropDownItem {
+    margin: auto;
+    width: 97%;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .navbar li a {
+        float: right;
+        margin: 2px auto;
+        width: 98%;
+        border: 1px solid #4189C7;
+        border-radius: 3px;
+    }
+
+    .dropdown-menu {
+        float: right;
+    }
+}
+
+@media (min-width: 768px) {
+    /*.navbar {
+        height: 100%;
+        width: calc(25% - 20px);
+    }
+    .navbar {
+        border-radius: 0;
+        border-width: 0;
+        height: 100%;
+    }*/
+    .navbar-header {
+        float: right;
+    }
+
+    .navbar .navbar-collapse {
+        border-top: 1px solid #444;
+        padding: 0;
+    }
+
+    .navbar .container-fluid {
+        padding: 0;
+        margin: 0;
+    }
+
+        .navbar .container-fluid .navbar-brand {
+            margin: 0;
+        }
+
+    .navbar ul {
+        float: right;
+    }
+
+    .navbar li {
+        float: right;
+        font-size: 15px;
+        margin: 6px;
+    }
+
+        .navbar li a {
+            padding: 10px 16px;
+            border-radius: 4px;
+        }
+    /*
+    .navbar a {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }*/
+}
+
+.KntuImage {
+    float: right;
+    color: #c6c6c6;
+    font-size: 40px;
+    position: fixed;
+    top: 5px;
+}
+
+.HeaderText {
+    float: left;
+    font-weight: bold;
+    color: #c6c6c6
+}
+
+.SearchBox {
+    width: 200px;
+    color: black;
+}
+
+.NewButtons {
+    float: left;
+    margin: 10px 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .NewButtons {
+        width: 95%;
+        margin: 10px;
+    }
+
+    .SearchBox {
+        width: 95%;
+        margin: auto;
+    }
+}

@@ -1,0 +1,163 @@
+﻿@page
+@model ratemyprofessors.Pages.Admin.comments.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Comment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Comment.ID" />
+            <input type="hidden" asp-for="Comment.EmailID" />
+            <div class="form-group">
+                <label asp-for="Comment.ShowName" class="control-label"></label>
+                <input asp-for="Comment.ShowName" class="form-control" />
+                <span asp-validation-for="Comment.ShowName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Teaching" class="control-label"></label>
+                <input asp-for="Comment.Teaching" class="form-control" />
+                <span asp-validation-for="Comment.Teaching" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Marking" class="control-label"></label>
+                <input asp-for="Comment.Marking" class="form-control" />
+                <span asp-validation-for="Comment.Marking" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.HomeWork" class="control-label"></label>
+                <input asp-for="Comment.HomeWork" class="form-control" />
+                <span asp-validation-for="Comment.HomeWork" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Project" class="control-label"></label>
+                <input asp-for="Comment.Project" class="form-control" />
+                <span asp-validation-for="Comment.Project" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Moods" class="control-label"></label>
+                <input asp-for="Comment.Moods" class="form-control" />
+                <span asp-validation-for="Comment.Moods" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.RollCall" class="control-label"></label>
+                <input asp-for="Comment.RollCall" class="form-control" />
+                <span asp-validation-for="Comment.RollCall" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Exhausting" class="control-label"></label>
+                <input asp-for="Comment.Exhausting" class="form-control" />
+                <span asp-validation-for="Comment.Exhausting" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.HandOuts" class="control-label"></label>
+                <input asp-for="Comment.HandOuts" class="form-control" />
+                <span asp-validation-for="Comment.HandOuts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Update" class="control-label"></label>
+                <input asp-for="Comment.Update" class="form-control" />
+                <span asp-validation-for="Comment.Update" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.ScapeAtTheEnd" class="control-label"></label>
+                <input asp-for="Comment.ScapeAtTheEnd" class="form-control" />
+                <span asp-validation-for="Comment.ScapeAtTheEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Answering" class="control-label"></label>
+                <input asp-for="Comment.Answering" class="form-control" />
+                <span asp-validation-for="Comment.Answering" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.HardExams" class="control-label"></label>
+                <input asp-for="Comment.HardExams" class="form-control" />
+                <span asp-validation-for="Comment.HardExams" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Knoledge" class="control-label"></label>
+                <input asp-for="Comment.Knoledge" class="form-control" />
+                <span asp-validation-for="Comment.Knoledge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.OverAll" class="control-label"></label>
+                <input asp-for="Comment.OverAll" class="form-control" />
+                <span asp-validation-for="Comment.OverAll" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Comments" class="control-label"></label>
+                <input asp-for="Comment.Comments" class="form-control" />
+                <span asp-validation-for="Comment.Comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Like" class="control-label"></label>
+                <input asp-for="Comment.Like" class="form-control" />
+                <span asp-validation-for="Comment.Like" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.DisLike" class="control-label"></label>
+                <input asp-for="Comment.DisLike" class="form-control" />
+                <span asp-validation-for="Comment.DisLike" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.DateTime" class="control-label"></label>
+                <input asp-for="Comment.DateTime" class="form-control" />
+                <span asp-validation-for="Comment.DateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Angry" class="control-label"></label>
+                <input asp-for="Comment.Angry" class="form-control" />
+                <span asp-validation-for="Comment.Angry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Bluntess" class="control-label"></label>
+                <input asp-for="Comment.Bluntess" class="form-control" />
+                <span asp-validation-for="Comment.Bluntess" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.DoYourWork" class="control-label"></label>
+                <input asp-for="Comment.DoYourWork" class="form-control" />
+                <span asp-validation-for="Comment.DoYourWork" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.Bad" class="control-label"></label>
+                <input asp-for="Comment.Bad" class="form-control" />
+                <span asp-validation-for="Comment.Bad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.ProfessorID" class="control-label"></label>
+                <select asp-for="Comment.ProfessorID" class="form-control" asp-items="ViewBag.ProfessorID"></select>
+                <span asp-validation-for="Comment.ProfessorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment.AccountID" class="control-label"></label>
+                <select asp-for="Comment.AccountID" class="form-control" asp-items="ViewBag.AccountID"></select>
+                <span asp-validation-for="Comment.AccountID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Comment.Verfied" /> @Html.DisplayNameFor(model => model.Comment.Verfied)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

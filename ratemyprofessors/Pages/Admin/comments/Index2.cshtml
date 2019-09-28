@@ -1,0 +1,56 @@
+﻿@page
+@model ratemyprofessors.Pages.Admin.comments.Index2Model
+@{
+    ViewData["Title"] = "Index2";
+}
+
+<h2>Confimed</h2>
+<br />
+<h3>Comments</h3>
+<p>
+    <a asp-page="Create">Create New</a>|
+    <a asp-page="index">To be Confirmed</a>
+</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Commentss[0].Professor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Commentss[0].Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Commentss[0].Comments)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Commentss[0].Verfied)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Commentss.Count; i++)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => Model.Commentss[i].Professor.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => Model.Commentss[i].Email.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => Model.Commentss[i].Comments)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => Model.Commentss[i].Verfied)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@Model.Commentss[i].ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@Model.Commentss[i].ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@Model.Commentss[i].ID">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>

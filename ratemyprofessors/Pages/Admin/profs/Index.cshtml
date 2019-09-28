@@ -1,0 +1,86 @@
+﻿@page
+@model ratemyprofessors.Pages.Admin.profs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<br />
+<h3>Proffs</h3>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Professor[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professor[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professor[0].Link)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professor[0].PrivateLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professor[0].WPLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professor[0].ImageLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professor[0].Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professor[0].Staff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professor[0].Approved)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Professor)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Link)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrivateLink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WPLink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageLink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Staff)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Approved)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

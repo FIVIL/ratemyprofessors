@@ -1,0 +1,175 @@
+﻿@page
+@model ratemyprofessors.Pages.Admin.comments.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Comment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.ShowName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.ShowName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Teaching)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Teaching)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Marking)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Marking)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.HomeWork)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.HomeWork)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Project)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Project)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Moods)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Moods)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.RollCall)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.RollCall)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Exhausting)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Exhausting)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.HandOuts)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.HandOuts)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Update)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Update)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.ScapeAtTheEnd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.ScapeAtTheEnd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Answering)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Answering)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.HardExams)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.HardExams)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Knoledge)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Knoledge)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.OverAll)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.OverAll)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Comments)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Comments)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Like)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Like)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.DisLike)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.DisLike)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.DateTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.DateTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Angry)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Angry)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Bluntess)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Bluntess)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.DoYourWork)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.DoYourWork)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Bad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Bad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Professor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Professor.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Account)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Account.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.Verfied)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment.Verfied)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Comment.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

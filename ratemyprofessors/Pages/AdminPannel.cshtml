@@ -1,0 +1,54 @@
+﻿@page
+@model ratemyprofessors.Pages.AdminPannelModel
+@{
+    ViewData["Title"] = "AdminPannel";
+}
+<div style="padding-top:25px;direction:rtl">
+    @if (Model.LogedIn)
+    {
+        <h3 class="text-primary">خوش آمدید @Model.Loginner</h3>
+        <hr />
+        @if (Model.SuperAdmin)
+        {
+<h2>سوپر ادمین</h2>
+<hr />
+<a href="/Admin/Accounts">کاربران</a>
+}
+<div style="text-align:center;font-size:20px">
+    <a href="/Admin/Univesities">دانشگاه ها</a> |
+    <a href="/Admin/Faculties">دانشکده ها</a> |
+    <a href="/Admin/courses">دروس</a> |
+    <a href="/Admin/profs">اساتید</a> |
+    <a href="/Admin/courseProf">اساتید درسها</a> |
+    <a href="/Admin/facProf">اساتید دانشکده ها</a> |
+    <a href="/Admin/comments">نظرات</a> |
+    <a href="/Admin/Messages">پیامهای رسیده</a> |
+    <a href="/Admin/Mailes">ایمیل ها</a> |
+    <a href="/">صفحه اصلی</a>
+</div>
+    }
+    else
+    {
+        <div style="margin:auto;width:200px;">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PassWord" class="control-label"></label>
+                    <input asp-for="PassWord" class="form-control" type="password" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label text-danger">@Model.WrongUserPass</label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="ورود" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+
+    }
+</div>
+
+

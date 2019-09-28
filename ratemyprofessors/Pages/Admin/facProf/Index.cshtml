@@ -1,0 +1,45 @@
+﻿@page
+@model ratemyprofessors.Pages.Admin.facProf.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                   <button class="btn btn-primary" asp-page-handler="SortProf">Prof</button>
+                </th>
+                <th>
+                    <button class="btn btn-primary" asp-page-handler="SortFac">Fac</button>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ProfFac)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Professor.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Faculty.Name)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
