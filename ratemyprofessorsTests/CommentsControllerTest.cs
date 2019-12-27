@@ -324,7 +324,7 @@ namespace ratemyprofessorsTests
         }
 
         [Fact]
-        public async void Check_RatePlus_Returns_NotFound_With_ValidData()
+        public async void Check_RatePlus_Returns_Ok_With_ValidData()
         {
             var comments = GetTestComments();
             var comment = comments.Find(ct => true);
