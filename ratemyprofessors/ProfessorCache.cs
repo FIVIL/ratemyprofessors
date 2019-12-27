@@ -24,9 +24,14 @@ namespace ratemyprofessors
         }
         private void Update()
         {
+            //var OptionsBuilder = new DbContextOptionsBuilder<DataBaseContext>();
+            //OptionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+            //List<Professor> ProfsL;
+
             var OptionsBuilder = new DbContextOptionsBuilder<DataBaseContext>();
-            OptionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+            OptionsBuilder.UseInMemoryDatabase(databaseName: "cache database");
             List<Professor> ProfsL;
+
             using (var DB = new DataBaseContext(OptionsBuilder.Options))
             {
                 ProfsL = DB.Professors
