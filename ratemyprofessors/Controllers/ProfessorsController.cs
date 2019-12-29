@@ -121,6 +121,7 @@ namespace ratemyprofessors.Controllers
 
 
         // POST: api/Professors
+        // TODO Return BadRequest on model error.
         [HttpPost("NewProf")]
         public async Task<IActionResult> PostProfessor([FromBody] Professor professor)
         {
