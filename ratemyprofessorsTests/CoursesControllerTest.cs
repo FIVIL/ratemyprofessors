@@ -213,5 +213,102 @@ namespace ratemyprofessorsTests
         }
         #endregion
 
+
+        #region Test GetAllCourses
+        [Fact]
+        public void Check_GetAllCourses_Returns_Approved_Courses()
+        {
+            var courses = new List<Course>()
+            {
+                new Course(){Approved = true},
+                new Course(){Approved = false},
+                new Course(){Approved = true}
+            };
+
+            var database = ConfigureDatabase("get_all_course");
+            database.Courses.AddRange(courses);
+            database.SaveChanges();
+
+            var controller = new CoursesController(database);
+            var result = controller.GetAllCourses();
+
+            var data = Assert.IsAssignableFrom<IEnumerable<Course>>(result);
+            Assert.Equal(2, data.Count());
+        }
+        #endregion
+
+
+        #region Test PostCourse
+        [Fact]
+        public async void Check_PostCourse_Returns_BadRequest_On_ModelError()
+        {
+            var database = ConfigureDatabase("bad_request_postCourse");
+            var controller = new CoursesController(database);
+            controller.ModelState.AddModelError("test", "test error");
+
+            var result = await controller.PostCourses(new Course());
+
+            Assert.IsType<BadRequestObjectResult>(result);
+        }
+
+        [Fact]
+        public async void Check_PostCourse_Returns_BadRequest_On_InvalidFacId()
+        {
+            var database = ConfigureDatabase("bad_request_postCourse_invalidId");
+            var controller = new CoursesController(database);
+
+
+            var result = await controller.PostCourses(new Course());
+
+            Assert.IsType<BadRequestResult>(result);
+        }
+
+        [Fact]
+        public async void Check_PostCourse_Returns_BadRequest_On_InavlidFacility()
+        {
+            var database = ConfigureDatabase("bad_request_postCourse_invalidFACILITY");
+            var testCourse = new Course()
+            {
+                FacID = Guid.NewGuid().ToString(),
+                Profs = Guid.NewGuid() + ";" + Guid.NewGuid()
+            };
+
+            var controller = new CoursesController(database);
+
+            var result = await controller.PostCourses(testCourse);
+
+            Assert.IsType<OkResult>(result);
+        }
+
+        [Fact]
+        public async void Check_PostCourse_Returns_BadRequest_On_ValidData()
+        {
+            var database = ConfigureDatabase("OK_postCourse");
+
+            var guid = Guid.NewGuid();
+
+            var fac = new Faculty()
+            {
+                ID = guid
+            };
+
+            var testCourse = new Course()
+            {
+                FacID = guid.ToString(),
+                Profs = Guid.NewGuid() + ";" + Guid.NewGuid()
+            };
+
+            database.Faculties.Add(fac);
+            database.SaveChanges();
+
+            var controller = new CoursesController(database);
+
+            var result = await controller.PostCourses(testCourse);
+
+            Assert.IsType<OkResult>(result);
+
+        }
+        #endregion
+
     }
 }
