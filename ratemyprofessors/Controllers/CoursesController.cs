@@ -73,6 +73,8 @@ namespace ratemyprofessors.Controllers
             return _context.Courses.Where(x => x.Approved);
         }
         // POST: api/Courses
+
+        // TODO Check Facility IsFound And If Not Return BadRequest
         [HttpPost]
         public async Task<IActionResult> PostCourses([FromBody] Course course)
         {
