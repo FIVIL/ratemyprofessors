@@ -29,7 +29,7 @@ namespace ratemyprofessors
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataBaseContext>(options =>
-                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                 options.UseSqlite("Data Source=app.db"));
 
             services.AddSingleton<ProfessorCache>();
 

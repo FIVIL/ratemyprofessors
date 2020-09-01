@@ -249,26 +249,26 @@ namespace ratemyprofessors.Controllers
                 {
                     Address = add,
                     ID = Guid.NewGuid(),
-                    Verified = false
+                    Verified = true
                 };
                 _context.Emails.Add(Email);
                 _context.Entry(Email).State = EntityState.Added;
                 comment.EmailID = Email.ID;
-                await SendMail(Email.Address, Email.ID);
+                //await SendMail(Email.Address, Email.ID);
                 await _context.SaveChangesAsync();
                 //confirmation mail send
                 HttpContext.Response.Headers.Add("MailRes", "2");
                 return Ok();
             }
-            if (!email.Verified)
-            {
-                comment.EmailID = email.ID;
-                _context.Entry(email).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
-                //please confirm your mial
-                HttpContext.Response.Headers.Add("MailRes", "3");
-                return Ok();
-            }
+            //if (!email.Verified)
+            //{
+            //    comment.EmailID = email.ID;
+            //    _context.Entry(email).State = EntityState.Modified;
+            //    await _context.SaveChangesAsync();
+            //    //please confirm your mial
+            //    HttpContext.Response.Headers.Add("MailRes", "3");
+            //    return Ok();
+            //}
             comment.EmailID = email.ID;
             _context.Entry(email).State = EntityState.Modified;
             await _context.SaveChangesAsync();

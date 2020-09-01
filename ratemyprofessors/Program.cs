@@ -5,8 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ratemyprofessors.Models;
 
 namespace ratemyprofessors
 {
@@ -14,7 +17,23 @@ namespace ratemyprofessors
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            var p = CreateWebHostBuilder(args).Build();
+            using (var scope = p.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                try
+                {
+                    var context = services.GetService<DataBaseContext>();
+                    context.Database.Migrate();
+
+                }
+                catch
+                {
+
+                }
+            }
+            p.Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

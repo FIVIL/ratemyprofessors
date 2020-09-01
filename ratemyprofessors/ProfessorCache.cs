@@ -25,7 +25,7 @@ namespace ratemyprofessors
         private void Update()
         {
             var OptionsBuilder = new DbContextOptionsBuilder<DataBaseContext>();
-            OptionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+            OptionsBuilder.UseSqlite("Data Source=app.db");
             List<Professor> ProfsL;
             using (var DB = new DataBaseContext(OptionsBuilder.Options))
             {

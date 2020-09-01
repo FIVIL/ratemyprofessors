@@ -31,45 +31,48 @@ namespace ratemyprofessors.Controllers
         }
 
         [HttpGet("GetByName")]
-        public IEnumerable<ProfessorCacheViewModel> GetByName()
-        //public async Task<IEnumerable<Professor>> GetByName()
+        //public IEnumerable<ProfessorCacheViewModel> GetByName()
+        public async Task<IEnumerable<Professor>> GetByName()
         {
-            //var Profs = await _context.Professors
-            //    .Where(x => x.Approved)
-            //    .Include(x => x.Comments)
-            //    .AsNoTracking()
-            //    .ToListAsync();
-            //return Profs;
-            return professorCache.Professors;
+            var Profs = await _context.Professors
+                .Where(x => x.Approved)
+                .Include(x => x.Comments)
+                .AsNoTracking()
+                .ToListAsync();
+            return Profs;
+
+            //return professorCache.Professors;
         }
 
         [HttpGet("GetBests")]
-        public IActionResult GetBests()
-        //public async Task<IActionResult> GetBests()
+        //public  IActionResult GetBests()
+        public async Task<IActionResult> GetBests()
         {
-            //return Ok((await _context.Professors
-            //    .AsNoTracking()
-            //    .Include(x => x.Comments)
-            //    .Where(x => x.Approved)
-            //    .ToListAsync()).OrderBy(x => x.Score).Take(5));
-            return Ok(professorCache.Professors
-                .Where(x => x.CommentCount > ProfessorCacheViewModel.MaxComment / 10)
-                .OrderBy(x => x.Score)
-                .Take(5));
+            return Ok((await _context.Professors
+                .AsNoTracking()
+                .Include(x => x.Comments)
+                .Where(x => x.Approved)
+                .ToListAsync()).OrderBy(x => x.Score).Take(5));
+
+            //return Ok(professorCache.Professors
+            //    .Where(x => x.CommentCount > ProfessorCacheViewModel.MaxComment / 10)
+            //    .OrderBy(x => x.Score)
+            //    .Take(5));
         }
         [HttpGet("GetWorst")]
-        public IActionResult GetWorst()
         //public async Task<IActionResult> GetWorst()
+        public async Task<IActionResult> GetWorst()
         {
-            //return Ok((await _context.Professors
-            //    .AsNoTracking()
-            //    .Include(x => x.Comments)
-            //    .Where(x => x.Approved)
-            //    .ToListAsync()).OrderByDescending(x => x.Score).Take(5));
-            return Ok(professorCache.Professors
-                 .Where(x => x.CommentCount > ProfessorCacheViewModel.MaxComment / 10)
-                .OrderByDescending(x => x.Score)
-                .Take(5));
+            return Ok((await _context.Professors
+                .AsNoTracking()
+                .Include(x => x.Comments)
+                .Where(x => x.Approved)
+                .ToListAsync()).OrderByDescending(x => x.Score).Take(5));
+
+            //return Ok(professorCache.Professors
+            //     .Where(x => x.CommentCount > ProfessorCacheViewModel.MaxComment / 10)
+            //    .OrderByDescending(x => x.Score)
+            //    .Take(5));
         }
         // GET: api/Professors/5
         [HttpGet("{id}")]
@@ -96,27 +99,27 @@ namespace ratemyprofessors.Controllers
 
 
         [HttpGet("ProfFac/{id}")]
-        public IActionResult GetProfessorsByFac([FromRoute] string id)
-        //public async Task<IActionResult> GetProfessorsByFac([FromRoute] string id)
+        //public IActionResult GetProfessorsByFac([FromRoute] string id)
+        public async Task<IActionResult> GetProfessorsByFac([FromRoute] string id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            //var course = await _context.Faculties
-            //    .AsNoTracking()
-            //    .Include(x => x.ProfFacs)
-            //        .ThenInclude(y => y.Professor)
-            //            .ThenInclude(z => z.Comments)
-            //    .FirstOrDefaultAsync(x => x.AliasName == id);
+            var course = await _context.Faculties
+                .AsNoTracking()
+                .Include(x => x.ProfFacs)
+                    .ThenInclude(y => y.Professor)
+                        .ThenInclude(z => z.Comments)
+                .FirstOrDefaultAsync(x => x.AliasName == id);
 
-            //if (course == null)
-            //{
-            //    return NotFound();
-            //}
-            //return Ok(course.ProfFacs.Select(x => x.Professor).Where(x => x.Approved));
-            return Ok(professorCache.Professors.Where(x => x.FacIDs.Contains(id)).OrderBy(x => x.FullName));
+            if (course == null)
+            {
+                return NotFound();
+            }
+            return Ok(course.ProfFacs.Select(x => x.Professor).Where(x => x.Approved));
+            //return Ok(professorCache.Professors.Where(x => x.FacIDs.Contains(id)).OrderBy(x => x.FullName));
         }
 
 
